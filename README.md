@@ -13,7 +13,7 @@ Convolutional Neural Network (CNN) using TensorFlow Library.
 * For Ubuntu or Mac users, you might be required to install Tkinter Package, to do this, just execute ```apt-get install -y python3-tk``` for Python3.X or ```apt-get install python2.7-tk``` for Python 2.7
 
 ## Running the Model
-* To run the model, make sure all of your test images are inside the train images. Inside the train images are folders of the classes of the image. For example, if you are trying to classify a dog image and cat image, then inside the train folder are two folders of cat (with images of cats in it) and dog (with images of dogs in it). Just to be safe, make sure the images are JPG/JPEG because transparency in images can break the code.
+* To run the model, make sure all of your test images are inside the train folder. Inside the train folder are folders of the classes of the images. For example, if you are trying to classify a dog image and cat image, then inside the train folder are two folders of cat (with images of cats in it) and dog (with images of dogs in it). Just to be safe, make sure the images are JPG/JPEG because transparency in images can break the code.
 * To run the training, just execute ```python train.py```. This will run the training and at the end of the training, a sample result will be shown using the matplotlib. After the training, model files will be created which will be used later on the test.py.
 
 ## Testing the Model
