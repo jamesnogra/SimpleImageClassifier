@@ -9,7 +9,7 @@ FIRST_NUM_CHANNEL = 32
 FILTER_SIZE = 3
 LR = 1e-4
 TRAIN_DIR = 'train'
-MODEL_NAME = 'fruits{}-{}.model'.format(LR, '6convlayers')
+MODEL_NAME = 'cnn{}-{}.model'.format(LR, '4convlayers')
 
 #get the image from the command 'python test.py "sample.png"'
 temp_image = sys.argv[1]

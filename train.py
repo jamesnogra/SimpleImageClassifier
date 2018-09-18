@@ -11,7 +11,7 @@ FIRST_NUM_CHANNEL = 32
 FILTER_SIZE = 3
 LR = 1e-4
 TRAIN_DIR = 'train'
-MODEL_NAME = 'fruits{}-{}.model'.format(LR, '6convlayers')
+MODEL_NAME = 'cnn{}-{}.model'.format(LR, '4convlayers')
 
 #getting all folders
 def define_classes():
@@ -81,8 +81,8 @@ model = tflearn.DNN(convnet, tensorboard_dir='log')
 
 
 #define the training data and test/validation data
-train = training_data[:round(len(training_data)*0.8)] #80% of the training data will be used for training
-test = training_data[-round(len(training_data)*0.2):] #20% of the training data will be used for validation
+train = training_data[:int(len(training_data)*0.8)] #80% of the training data will be used for training
+test = training_data[-int(len(training_data)*0.2):] #20% of the training data will be used for validation
 X = np.array([i[0] for i in train]).reshape(-1,IMG_SIZE,IMG_SIZE,1)
 Y = [i[1] for i in train]
 test_x = np.array([i[0] for i in test]).reshape(-1,IMG_SIZE,IMG_SIZE,1)
