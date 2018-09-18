@@ -38,3 +38,5 @@ All images are converted to grayscale and rescaled to 64x64 pixels. Filter sizes
 7. After that is a Fully Connected Layer with 512 channels
 8. Then a dropout of 80% will be applied to prevent overfitting
 9. After that, a Fully Connected Layer is applied with X number of channels where X is the number of classes (folders) in the train folder. The activation function used in this last layer is the softmax function.
+
+[Follow me on Instagram](https://www.instagram.com/thejamesarnold/)
