@@ -1,9 +1,10 @@
 # Simple Image Classifier
 Convolutional Neural Network (CNN) using TensorFlow Library.
 
-## Prerequisites 
+## Prerequisites
 * Make sure you have more than 100 images per class. For characterter recognition, sample images of 20 per character is acceptable.
 * Install python 3.6 if you are in Windows. For Mac or Ubuntu, make sure your python version is 3.x
+* If you are using Python 2.X, then use pip2 for the installations that follow
 * Install OpenCV for image manipulation ```pip install opencv-python```
 * Install numpy for arrays ```pip install numpy```
 * Install tensorflow ```pip install tensorflow```
