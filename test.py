@@ -4,10 +4,8 @@ import os                  # dealing with directories
 from tqdm import tqdm      # a nice pretty percentage bar for tasks. Thanks to viewer Daniel BA1/4hler for this suggestion
 import sys
 
-IMG_SIZE = 64
-FIRST_NUM_CHANNEL = 32
-FILTER_SIZE = 3
-LR = 1e-4
+from settings import *
+
 TRAIN_DIR = 'train'
 MODEL_NAME = 'cnn{}-{}.model'.format(LR, '4convlayers')
 

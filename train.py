@@ -5,11 +5,8 @@ from random import shuffle # mixing up or currently ordered data that might lead
 from tqdm import tqdm      # a nice pretty percentage bar for tasks. Thanks to viewer Daniel BA1/4hler for this suggestion
 import matplotlib.pyplot as plt
 
-NUM_EPOCHS = 100
-IMG_SIZE = 64
-FIRST_NUM_CHANNEL = 32
-FILTER_SIZE = 3
-LR = 1e-4
+from settings import *
+
 TRAIN_DIR = 'train'
 MODEL_NAME = 'cnn{}-{}.model'.format(LR, '4convlayers')
 
@@ -31,12 +28,12 @@ def define_labels(all_classes):
 	return all_labels
 
 def create_train_data(all_classes, all_labels):
-	print('Loading all training images...')
 	training_data = []
 	label_index = 0
-	for specific_class in tqdm(all_classes):
+	for specific_class in all_classes:
 		current_dir = TRAIN_DIR + '/' + specific_class
-		for img in os.listdir(current_dir):
+		print('Loading all', all_classes[label_index], 'images...')
+		for img in tqdm(os.listdir(current_dir)):
 			path = os.path.join(current_dir,img)
 			img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
 			img = cv2.resize(img, (IMG_SIZE,IMG_SIZE))

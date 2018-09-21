@@ -29,7 +29,7 @@ Image is class grapes
 ```
 
 ## Structure of the CNN
-All images are converted to grayscale and rescaled to 64x64 pixels. Filter sizes for all layers are 3x3 (both Convolution and Max Pooling layers). The activation function used in both the Convolution Layer and Fully Connected Layer is ReLU. Learning rate used is 0.0001 and the number of epochs is 100. All of these hyper parameters can be changed but make sure to make the changes in both the train.py and test.py.
+All images are converted to grayscale and rescaled to 64x64 pixels. Filter sizes for all layers are 3x3 (both Convolution and Max Pooling layers). The activation function used in both the Convolution Layer and Fully Connected Layer is ReLU. Learning rate used is 0.0001 and the number of epochs is 100. All of these hyper parameters can be changed in the settings.py.
 1. First layer is a Convolution Layer with 32 channels
 2. After the first layer is a Max Pooling Layer
 3. Next is a Convolution Layer with 64 channels
