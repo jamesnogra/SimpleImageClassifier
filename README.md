@@ -8,6 +8,7 @@ apples 54.6645 %
 dragon fruit 7.697 %
 grapes 10.9816 %
 oranges 26.6568 %
+```
 
 Image is class apples
 
