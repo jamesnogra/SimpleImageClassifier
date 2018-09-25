@@ -1,5 +1,15 @@
 # Simple Image Classifier
 Convolutional Neural Network (CNN) using TensorFlow Library.
+![alt text](https://www.setaswall.com/wp-content/uploads/2017/10/Apple-Fruit-Grass-Wallpaper-720x1280-380x676.jpg)
+```
+RESULTS:
+
+apples 54.6645 %
+dragon fruit 7.697 %
+grapes 10.9816 %
+oranges 26.6568 %
+
+Image is class apples
 
 ## Prerequisites
 * Make sure you have more than 100 images per class. For characterter recognition, sample images of 20 per character is acceptable.
