@@ -1,5 +1,6 @@
 # Simple Image Classifier
 Convolutional Neural Network (CNN) using TensorFlow Library.
+
 ![Apple](https://www.thoughtco.com/thmb/QJSxu_9p3SRxDSEBZ14vgZQz6ys=/400x0/filters:no_upscale():max_bytes(150000):strip_icc()/herbstfarben-144476015-5867d0525f9b586e02213437.jpg)
 ```
 RESULTS:
