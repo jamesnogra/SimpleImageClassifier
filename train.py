@@ -35,8 +35,11 @@ def create_train_data(all_classes, all_labels):
 		print('Loading all', all_classes[label_index], 'images...')
 		for img in tqdm(os.listdir(current_dir)):
 			path = os.path.join(current_dir,img)
-			img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
-			img = cv2.resize(img, (IMG_SIZE,IMG_SIZE))
+			if (IMAGE_CHANNELS==1):
+				img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
+			elif (IMAGE_CHANNELS==3):
+				img = cv2.imread(path)
+			img = cv2.resize(img, (IMG_SIZE, IMG_SIZE))
 			training_data.append([np.array(img),np.array(all_labels[label_index])])
 		label_index = label_index + 1
 	shuffle(training_data)
@@ -53,7 +56,7 @@ from tflearn.layers.conv import conv_2d, max_pool_2d
 from tflearn.layers.core import input_data, dropout, fully_connected
 from tflearn.layers.estimator import regression
 
-convnet = input_data(shape=[None, IMG_SIZE, IMG_SIZE, 1], name='input')
+convnet = input_data(shape=[None, IMG_SIZE, IMG_SIZE, IMAGE_CHANNELS], name='input')
 
 convnet = conv_2d(convnet, FIRST_NUM_CHANNEL, FILTER_SIZE, activation='relu')
 convnet = max_pool_2d(convnet, FILTER_SIZE)
@@ -80,9 +83,9 @@ model = tflearn.DNN(convnet, tensorboard_dir='log')
 #define the training data and test/validation data
 train = training_data[:int(len(training_data)*0.8)] #80% of the training data will be used for training
 test = training_data[-int(len(training_data)*0.2):] #20% of the training data will be used for validation
-X = np.array([i[0] for i in train]).reshape(-1,IMG_SIZE,IMG_SIZE,1)
+X = np.array([i[0] for i in train]).reshape(-1, IMG_SIZE, IMG_SIZE, IMAGE_CHANNELS)
 Y = [i[1] for i in train]
-test_x = np.array([i[0] for i in test]).reshape(-1,IMG_SIZE,IMG_SIZE,1)
+test_x = np.array([i[0] for i in test]).reshape(-1, IMG_SIZE, IMG_SIZE, IMAGE_CHANNELS)
 test_y = [i[1] for i in test]
 
 model.fit({'input': X}, {'targets': Y}, n_epoch=NUM_EPOCHS, validation_set=({'input': test_x}, {'targets': test_y}), 
@@ -100,7 +103,7 @@ for num,data in enumerate(training_data[:12]):
     
     y = fig.add_subplot(3,4,num+1)
     orig = img_data
-    data = img_data.reshape(IMG_SIZE,IMG_SIZE,1)
+    data = img_data.reshape(IMG_SIZE, IMG_SIZE, IMAGE_CHANNELS)
     
     data_res = np.round(model.predict([data])[0], 0)
     str_label = '?'

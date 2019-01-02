@@ -11,7 +11,10 @@ MODEL_NAME = 'cnn{}-{}.model'.format(LR, '4convlayers')
 
 #get the image from the command 'python test.py "sample.png"'
 temp_image = sys.argv[1]
-test_image = cv2.imread(temp_image, cv2.IMREAD_GRAYSCALE)
+if (IMAGE_CHANNELS==1):
+	test_image = cv2.imread(temp_image, cv2.IMREAD_GRAYSCALE)
+elif (IMAGE_CHANNELS==3):
+	test_image = cv2.imread(temp_image)
 test_image = cv2.resize(test_image, (IMG_SIZE,IMG_SIZE))
 
 #getting all folders
@@ -41,7 +44,7 @@ from tflearn.layers.conv import conv_2d, max_pool_2d
 from tflearn.layers.core import input_data, dropout, fully_connected
 from tflearn.layers.estimator import regression
 
-convnet = input_data(shape=[None, IMG_SIZE, IMG_SIZE, 1], name='input')
+convnet = input_data(shape=[None, IMG_SIZE, IMG_SIZE, IMAGE_CHANNELS], name='input')
 
 convnet = conv_2d(convnet, FIRST_NUM_CHANNEL, FILTER_SIZE, activation='relu')
 convnet = max_pool_2d(convnet, FILTER_SIZE)
@@ -73,7 +76,7 @@ if os.path.exists('{}.meta'.format(MODEL_NAME)):
 
 #identify image
 print('\nRESULTS:\n')
-data = test_image.reshape(IMG_SIZE,IMG_SIZE,1)
+data = test_image.reshape(IMG_SIZE, IMG_SIZE, IMAGE_CHANNELS)
 data_res_float = model.predict([data])[0]
 data_res = np.round(data_res_float, 0)
 str_label = '?'
