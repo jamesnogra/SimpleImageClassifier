@@ -24,6 +24,8 @@ Image is class apples
 * Install tqdm for progress bars ```pip install tqdm```
 * Install matplotlib for displaying graphed results ```pip install matplotlib```
 * Install other libraries ```apt update && apt install -y libsm6 libxext6```
+* Install optional libraries ```pip3 install flask```
+* Install optional libraries ```pip3 install flask-cors```
 * For Ubuntu or Mac users, you might be required to install Tkinter Package, to do this, just execute ```apt-get install -y python3-tk``` for Python3.X or ```apt-get install python2.7-tk``` for Python 2.7
 
 ## Training the Model
