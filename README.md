@@ -33,7 +33,7 @@ Image is class apples
 * To run the training, just execute ```python train.py```. This will run the training and at the end of the training, a sample result will be shown using the matplotlib. After the training, model files will be created which will be used later on the test.py.
 
 ## Testing the Model
-To test the model, just run the command `python test.py "C:\Users\lenovo\Documents\Images\grapes-italy.jpg`` or `python test.py https://images.everydayhealth.com/images/apples-101-about-1440x810.jpg`. The output would be something like this:
+To test the model, just run the command `python test.py "C:\Users\lenovo\Documents\Images\grapes-italy.jpg` or `python test.py https://images.everydayhealth.com/images/apples-101-about-1440x810.jpg`. The output would be something like this:
 ```
 RESULTS:
 apples 0.1196 %
