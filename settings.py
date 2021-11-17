@@ -1,5 +1,5 @@
 # Increase this number if you have more data or the validation accuracy (val_acc) is still low.
-NUM_EPOCHS = 100
+NUM_EPOCHS = 50
 
 # Increase or decrease this number.
 #Uusually, for character recognition, a 28x28 image is enough.
@@ -19,3 +19,10 @@ IMAGE_CHANNELS = 3
 # 1e-4 means 0.0001
 # 1e-2 means 0.01
 LR = 1e-4
+
+# Percent of data to use as training data
+PERCENT_TRAINING_DATA = 80
+
+# Parameters for the model saved
+TRAIN_DIR = 'train'
+MODEL_NAME = 'cnn-{}-{}.model'.format(LR, '4convlayers')
